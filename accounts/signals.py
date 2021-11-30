@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 
 
 
-@receiver(post_save,sender = get_user_model)
+@receiver(post_save,sender = get_user_model())
 def create_user_profile(instance, created, sender, **kwargs):
   if created:
     Profile.objects.create(user = instance)
