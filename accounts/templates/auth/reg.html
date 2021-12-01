@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+  <h1>Register Your Account</h1>
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form">
+
+        <form method = "Post">
+          <div class="inner">
+            {%csrf_token%}
+            {{ form|crispy }}
+            <button type="submit" class =" btn btn-lg btn-dark">
+              Sign Up
+            </button>
+          </div>
+        </form>
+
+       
+        
+          
+      </div>     
+    </div>
+    <div class="col-md-6">
+      <div class="content text-center">
+        <!-- <div class="img">
+          <img class ="img-sign" src="{% static 'images/login.png' %}" alt="">  
+        </div> -->
+        <h5>Have an Account?</h5>
+        <a href="{% url 'login' %}"><button class = 'btn btn-lg btn-outline-dark'>Sign In</button></a>
+      </div>
+    </div>
+    
+  </div>
+ 
+
+
+
+{% endblock %}
