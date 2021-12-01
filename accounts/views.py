@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
 from .forms import CustomCreationForm
 from .models import CustomUser
+
 
 
 # Create your views here.
@@ -18,6 +20,8 @@ def reg(request):
         form = CustomCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            username = form.cleaned_data['username']
+            messages.success(request, f"user {username} successfully created")
             return redirect('login')
     else:
         form = CustomCreationForm(request.POST)
@@ -38,7 +42,9 @@ def log(request):
     if user is not None:
       person  = CustomUser.objects.get(username = request.user.username)     
       if person.is_superuser:
+        messages.success(request, f"user {username} successfully logged in")
         return redirect(docView)
+      messages.sucess(request, f"user {username} successfully logged in")
       return redirect(home)
   return render(request, 'auth/login.html', {'form': form})
 
