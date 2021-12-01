@@ -60,8 +60,20 @@ class Profile(models.Model):
       return self.user.username
 
 
+
+CONDITION_CHOICES = (
+    ("0", "Relations"),
+    ("1", "Work and Career"),
+    ("2", "Personal Conditions"),
+)
+
 class Conditions(models.Model):
-  condition = models.TextField()
+  topic = models.CharField( max_length = 20,
+        choices = CONDITION_CHOICES,
+        default = '2')
   name = models.CharField(max_length=255)
+  date = models.DateField()
+  email = models.EmailField(verbose_name="email address")
+  phone = models.CharField(max_length=15)
   def __str__(self):
       return self.name
