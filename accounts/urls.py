@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import landing, log, home, docView, reg
+from .views import landing, log, home, docView, reg, calls
 
 urlpatterns = [
    path('', landing, name='landingpage'),
@@ -7,5 +7,6 @@ urlpatterns = [
    path('register/', reg, name='register'),
    path('home/', home, name = 'home'),
    path('doctordata/', docView, name = 'docView'),
+   path('schedule/', calls, name = 'schedule' ),
 
 ]

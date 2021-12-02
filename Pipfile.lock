@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fb6b4d69939a6064cfc678bc0b62181b9bc04da35cdc0db2fd300356b4a7fff9"
+            "sha256": "3e2c99e1724a281cbc5cecee1025704a985363a689ff2bbded3a80c331af62eb"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -38,6 +38,13 @@
             ],
             "index": "pypi",
             "version": "==1.13.0"
+        },
+        "django-datetimepicker": {
+            "hashes": [
+                "sha256:e3d576d384bd990c3a6ac41f62821950e69fab030b8170ffb295b0374382b571"
+            ],
+            "index": "pypi",
+            "version": "==3.14"
         },
         "psycopg2": {
             "hashes": [
