@@ -1,0 +1,17 @@
+
+html{
+  scroll-behavior: smooth;
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.nav-img{
+  height: 55px;
+  width: 80px;
+}
+.video-img{
+  height: 400px;
+  width: 600px;
+} 

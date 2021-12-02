@@ -1,8 +1,79 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block content %}
-
 {% include 'main/nav.html' %}
+<section id="top">
+  <div class="top-content">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>
+          MAKE YOUR MENTAL HEALTH YOUR TOP PRIORITY
+        </h1>
+        <h6>
+          Get your problems resolved with detailed responses from our top specialists
+        </h6>
+
+      </div>
+      <div class="col-md-6">
+        <img src="{% static 'images/intro.svg' %}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+<section id="offer">
+  <div class="services">
+    <div class="box experts">
+      <!-- icon -->
+      <h3>Connect With Therapists</h3>
+      <div class="lin"></div>
+      <p>We identify what you need and we match you with the right specialist.
+      </p>
+    </div>
+    <div class="box calls">
+         <!-- icon -->
+      <h3>Online Calls</h3>
+      <div class="lin"></div>
+      <p>We offer the ability to schedule a one-to-one 
+        call at the comfort of your home 
+      </p>
+    </div>
+    <div class="box privacy">
+       <!-- icon -->
+       <h3>Privacy & Security</h3>
+       <div class="lin"></div>
+       <p>
+         All conversations are absolutely end-to-end encrypted.
+         Platinum security standards
+       </p>
+    </div>
+  </div>
+  <div class="try">
+    <button class="btn btn-primary">Try Now</button>
+  </div>
+</section>
+<div id="platform">
+  <div class="plat-header">
+    <h1>Our Platform</h1>
+    <div class = "line line-start"></div>
+    <div class="summary">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Easy to use - Seemless connectivity with  much ease</h4>
+          <h4>100% secure - End to end encrypted call</h4>
+          <h4>Available Across Platforms. - Use in your Desktop ipda and on your mobile phone </h4>
+          <h4>Mood Journal - Take down notes and record your progress</h4>
+        </div>
+        <div class="col-md-6">
+          <div class="video-call">
+            <img class = "video-img"src="{% static 'images/video1.jpg' %}" alt="">
+  
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 
 {% endblock %}
