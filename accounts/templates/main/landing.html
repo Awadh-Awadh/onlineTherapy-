@@ -2,6 +2,20 @@
 {% load static %}
 
 {% block content %}
-<h1>Awadh</h1>
+<div class="container">
+  {% include 'main/nav.html' %}
+  <div class="row">
+    <div class="col-md-6">
+      <h1>BE OPEN.RESOLVE.STAY HAPPY</h1>
+      <h5>Find the best therapists online with the click of a button </h5>
+      <p>Speak to our experts and reinvigorate your mental well being</p>
+
+    </div>
+    <div class="col-md-6">
+      <img src="{% static 'main/lan.svg' %}" alt="">
+    </div>
+  </div>
+  <a href="{% url 'login' %}">Get started</a>
+</div>
 
 {% endblock %}
