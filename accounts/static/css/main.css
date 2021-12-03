@@ -159,7 +159,6 @@ body{
   background-image: url('../images/schedule.jpg');  
   background-repeat:no-repeat;
   background-size:cover;
-  height: 100vh;
 }
 .conditions{
   display: flex;
@@ -190,7 +189,7 @@ body{
   font-size: 1rem;
   border-radius: 40px;
 }
-.book-btn{
+.book-btn,.book-content h5{
   margin-top: 2rem;
 }
 .book-condition{
@@ -203,10 +202,27 @@ body{
   background-color:#05ce91;
   margin: 5rem auto;
   color: white;
-  font-size: 900;
+  position: relative;
   padding: 6% 3%;
-  border-radius: 0 50% 0 50%;
+  border-radius: 0 50% 0 50% ;
 }
 .book-content h5{
   line-height: 3rem;
+  font-weight: 900;
+}
+.tick{
+  margin-top: 3rem;
+}
+.book-content p i{
+  font-size: 5rem !important;
+}
+.bounce{
+  animation: bounce 4s infinite alternate;
+  position: relative;
+
+}
+@keyframes bounce {
+  0%   {top:0px;}
+  50%  { top:30px;}
+  100% { top:0px;}
 }

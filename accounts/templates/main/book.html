@@ -11,8 +11,11 @@
           <div class="book-content">
             <h1>Hello {{user.username }},</h1>
             <h5>Book a call with us now and be happier with a click of a button</h5>
-            <p class="tick text-center"><i class="far fa-check-circle"></i></p>
-          </div>       
+            <div class="bounce">
+              <p class="tick text-center"><i class="far fa-check-circle"></i></p>
+            </div>  
+          </div> 
+              
 
         </div>
         <div class="col-md-5">
@@ -46,9 +49,35 @@
             
           </div>
           <p class = "more">And more ...</p>
-
+          
           <div class="text-center  book-btn">
-            <button class = "btn book">Book Now</button>
+            <button type="button" class="btn book" data-bs-toggle="modal" data-bs-target="#form">
+              Book Now
+            </button>
+          </div>
+          <div class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Book Now</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method = "post">
+                    <div class="book-header">
+                    {%csrf_token%}
+                    {{form | crispy}}
+                    </div>
+                    <button type="submit" class =" btn btn-lg btn-outline-success mt-4">
+                    Submit
+                    </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
          
         </div>
