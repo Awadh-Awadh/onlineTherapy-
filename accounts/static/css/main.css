@@ -133,6 +133,9 @@ body{
 .plat-content h1,.back h1, #thera h1{
   font-weight: 800;
 }
+.custom-head{
+  font-weight: 900;
+}
 .plat-content h4{
   margin: 3rem 0;
   font-weight: 900;
@@ -189,4 +192,21 @@ body{
 }
 .book-btn{
   margin-top: 2rem;
+}
+.book-condition{
+  margin: 2.5rem 0;
+  
+}
+.book-content{
+  width: 500px;
+  height: 500px;
+  background-color:#05ce91;
+  margin: 5rem auto;
+  color: white;
+  font-size: 900;
+  padding: 6% 3%;
+  border-radius: 0 50% 0 50%;
+}
+.book-content h5{
+  line-height: 3rem;
 }
