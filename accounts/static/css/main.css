@@ -13,7 +13,10 @@ body{
 }
 
 #thera{
-  background: black;
+  padding: 10% 0;
+}
+.back{
+  background: #05ce91;
 }
 #offer{
   padding: 10% 8%;
@@ -127,11 +130,25 @@ body{
 #platform{
   padding: 2% 6%;
 }
-.plat-content h1{
+.plat-content h1,.back h1, #thera h1{
   font-weight: 800;
 }
 .plat-content h4{
   margin: 3rem 0;
   font-weight: 900;
   opacity: .8;
+}
+
+.carousel .carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+.therapy-head{
+  margin-bottom: 2rem;
 }
