@@ -55,7 +55,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    about = models.TextField(max_length=300)
+    bio = models.TextField(max_length=300)
      
     def __str__(self):
       return self.user.username
@@ -76,5 +76,9 @@ class Conditions(models.Model):
   email = models.EmailField(verbose_name="email address")
   date = models.DateField()
   phone = models.CharField(max_length=15)
+
+  class Meta:
+    ordering = ['-pk']
+    verbose_name = 'Condition'
   def __str__(self):
       return self.name

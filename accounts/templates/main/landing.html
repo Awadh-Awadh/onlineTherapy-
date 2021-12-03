@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
   {% include 'main/nav.html' %}
   <div class="row">
     <div class="col-md-6">
@@ -12,7 +12,7 @@
 
     </div>
     <div class="col-md-6">
-      <img src="{% static 'main/lan.svg' %}" alt="">
+      <img src="{% static 'images/land.svg' %}" alt="">
     </div>
   </div>
   <a href="{% url 'login' %}">Get started</a>

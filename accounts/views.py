@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
-from .forms import CustomCreationForm, ConditionForm
-from .models import CustomUser
+from .forms import CustomCreationForm, ConditionForm, ProfileUpdate
+from .models import Conditions, CustomUser
 
 
 
@@ -40,6 +40,7 @@ def log(request):
     user = authenticate(username=username, password=password)
     print(user)
     if user is not None:
+      login(request, user)
       person  = CustomUser.objects.get(username = request.user.username)     
       if person.is_superuser:
         messages.success(request, f"user {username} successfully logged in")
@@ -54,7 +55,13 @@ def home(request):
 
 
 def docView(request):
-   return render(request, 'main/doctor.html')
+   conditions = Conditions.objects.all()
+   users = CustomUser.objects.all()
+   context = {
+     'conditions': conditions,
+     'users': users
+   }
+   return render(request, 'main/doctor.html', context)
 
 
 def calls(request): 
@@ -67,3 +74,17 @@ def calls(request):
   else:
      form = ConditionForm()
   return render(request, 'main/book.html', {'form': form})
+
+def profile(request):
+  if request.method == 'POST':
+    form = ProfileUpdate(request.POST, instance=request.user.profile)
+    if form.is_valid():
+      obj = form.save(commit=False)
+      obj.user = request.user.username
+      obj.save()
+  else:
+    form = ProfileUpdate()
+  context = {
+    'form': form
+  }
+  return render(request, 'main/profile.html', context)

@@ -3,7 +3,7 @@ from django.forms import ModelForm, widgets
 from django import forms
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.contrib.auth import get_user_model
-from .models import CustomUser, Conditions
+from .models import CustomUser, Conditions, Profile
 from datetimepicker.widgets import DateTimePicker
 
 
@@ -35,3 +35,9 @@ class SampleForm(forms.Form):
   widget=DateTimePicker(),
   )
 
+class ProfileUpdate(forms.ModelForm):
+  username = forms.CharField(max_length=255)
+  class Meta:
+    model = Profile
+    fields = ['bio']
+    
