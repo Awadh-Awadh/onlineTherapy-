@@ -152,3 +152,41 @@ body{
 .therapy-head{
   margin-bottom: 2rem;
 }
+#book{
+  background-image: url('../images/schedule.jpg');  
+  background-repeat:no-repeat;
+  background-size:cover;
+  height: 100vh;
+}
+.conditions{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin:2rem;
+}
+.conditions .btn{
+  margin:1rem;
+  color: #Ffffff;
+  background-color: #010a3d;
+  padding: 1rem 4rem;
+  border-radius: 20px;
+
+
+}
+.more{
+  margin:0 3rem;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #010a3d;
+}
+.book{
+  background-color: #05ce91;
+  padding: 1.3rem 5rem;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: 40px;
+}
+.book-btn{
+  margin-top: 2rem;
+}

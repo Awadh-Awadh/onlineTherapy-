@@ -2,45 +2,51 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-<main>
+<main id = "book">
 
   <section>
-    <div class="book">
+    <div class="booking">
       <div class="row">
         <div class="col-md-7">
-          <h4>Hello {{user.username }},</h4>
-          <p>Book a call with us now and be happier with a click of a button</p>
+          <div class="book-content">
+            <h4>Hello {{user.username }},</h4>
+            <p>Book a call with us now and be happier with a click of a button</p>
+          </div>       
 
         </div>
         <div class="col-md-5">
-          <h1>Conditions Include</h1>
+          <div class="book-condition">
+            <h1 class = "text-center">Conditions Include</h1>
+          </div>
+          
           <div class="conditions">
             <div>
-              <button class="btn btn-warning">Lack of Purpose</button>
+              <button class="btn btn-outline-dark">Lack of Purpose</button>
             </div>
             <div>
-              <button class="btn btn-warning">Stress</button>
+              <button class="btn">Demotivation</button>
             </div>
             <div>
-              <button class="btn btn-warning">Demotivation</button>
+              <button class="btn ">Depression</button>
             </div>
             <div>
-              <button class="btn btn-warning">Depression</button>
+              <button class="btn">Sadness</button>
             </div>
             <div>
-              <button class="btn btn-warning">Sadness</button>
+              <button class="btn">Suicidal Thoughts</button>
             </div>
             <div>
-              <button class="btn btn-warning">Suicidal Thoughts</button>
+              <button class="btn">Stress</button>
             </div>
             <div>
-              <button class="btn btn-warning">Low confidence</button>
+              <button class="btn">Low confidence</button>
             </div>
-            <p>And more ...</p>
+            
           </div>
+          <p class = "more">And more ...</p>
 
-          <div class="text-center">
-            <button class = "btn btn-success">Book Now</button>
+          <div class="text-center  book-btn">
+            <button class = "btn book">Book Now</button>
           </div>
          
         </div>
