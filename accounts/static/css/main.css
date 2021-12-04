@@ -226,6 +226,11 @@ body{
   background-color: #2C5F2D;
   height: 100vh;
 }
+.icons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
 
 @keyframes bounce {
   0%   {top:0px;}

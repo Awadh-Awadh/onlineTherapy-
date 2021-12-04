@@ -1,6 +1,60 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block content %}
-<h1>Awadh</h1>
+<main id="data">
+  <section id="overview">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="icons">
+            <div class="home">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="users">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="dates">
+              <i class="fas fa-calendar-week"></i>
+            </div>
+            <div class="disease">
+              <i class="fas fa-clock"></i>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="overview">
+            <div class="overview-head">
+              <h3>Upcoming Appointments</h3>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Disease</th>
+                  <th scope="col">Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <th><a href="" class = "btn btn-primary">Approve</a></th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="current-book">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 {% endblock %}
