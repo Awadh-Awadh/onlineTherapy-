@@ -21,16 +21,16 @@ body{
 #offer{
   padding: 10% 8%;
 }
-.top-content{
+.top-content,.landing-content{
   width: 70%;
   margin: 0 auto;
 
 }
-.top-content,.top-img{
+.top-content,.top-img,.land-image,.landing-content{
   margin-top: 10rem;
 }
 
-.top-content h1{
+.top-content h1,.landing-content h1{
   font-weight: 900;
   font-size: 3rem;
   line-height: 5rem;
@@ -42,9 +42,12 @@ body{
   opacity: .8;
   line-height: 3rem;
 }
-.home-img,.video-img{
+.home-img,.video-img,.landing-image{
   height: 500px;
   width: 800px;
+}
+.landing-content h1,h5,p{
+  color: #fff;
 }
 .try{ 
   margin-left: 8%;
@@ -172,8 +175,6 @@ body{
   background-color: #010a3d;
   padding: 1rem 4rem;
   border-radius: 20px;
-
-
 }
 .more{
   margin:0 3rem;
@@ -189,7 +190,7 @@ body{
   font-size: 1rem;
   border-radius: 40px;
 }
-.book-btn,.book-content h5{
+.book-btn,.book-content h5,.landing-content h5{
   margin-top: 2rem;
 }
 .book-condition{
@@ -221,6 +222,11 @@ body{
   position: relative;
 
 }
+.landing{
+  background-color: #2C5F2D;
+  height: 100vh;
+}
+
 @keyframes bounce {
   0%   {top:0px;}
   50%  { top:30px;}

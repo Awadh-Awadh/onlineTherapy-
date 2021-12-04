@@ -20,17 +20,17 @@
           <a class="nav-link" href="#thera">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a class="nav-link" href="{% url 'profile' %}">Profile</a>
         </li>
         <li class="nav-item">
           <a class="nav-link btn btn-success" href="{% url 'schedule' %}">Schedule</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Sign in</a>
+          <a class="nav-link" aria-current="page" href="{% url 'login' %}">Sign in</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">SignUp</a>
+          <a class="nav-link" aria-current="page" href="{% url 'register' %}">SignUp</a>
         </li>
         {% endif %}
       </ul>
