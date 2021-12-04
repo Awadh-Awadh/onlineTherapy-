@@ -69,7 +69,6 @@ body{
   padding: 5% 3%; 
 }
 .services{
-  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -117,7 +116,6 @@ body{
   font-size: 2.5rem;
 }
 .try-now{
-  display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
@@ -164,7 +162,6 @@ body{
   background-size:cover;
 }
 .conditions{
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin:2rem;
@@ -175,6 +172,13 @@ body{
   background-color: #010a3d;
   padding: 1rem 4rem;
   border-radius: 20px;
+}
+.current-book,.conditions,.try-now,.services{
+  display: flex;
+}
+.current-book{
+  justify-content: space-evenly;
+  margin-top: 3rem;
 }
 .more{
   margin:0 3rem;
@@ -230,6 +234,13 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+.cont{
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  border: 2px solid #2C5F2D;
+  background-color: #ecf0f1;
 }
 
 @keyframes bounce {

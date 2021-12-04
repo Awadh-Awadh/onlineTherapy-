@@ -56,10 +56,12 @@ def home(request):
 
 def docView(request):
    conditions = Conditions.objects.all()
-   users = CustomUser.objects.all()
+   users_count = CustomUser.objects.all().count()
+   conditions_count = Conditions.objects.all().count()
    context = {
      'conditions': conditions,
-     'users': users
+     'users': users_count,
+     'bookcount': conditions_count,
    }
    return render(request, 'main/doctor.html', context)
 
@@ -68,7 +70,9 @@ def calls(request):
   if request.method == 'POST':
        form = ConditionForm(request.POST)
        if form.is_valid():
-          form.save()
+          obj = form.save(commit=False)
+          obj.user = request.user
+          obj.save()
           messages.success(request,  "Response Recorded. You will receive an email with the full details instructions")
           return redirect('home')
   else:
@@ -80,7 +84,7 @@ def profile(request):
     form = ProfileUpdate(request.POST, instance=request.user.profile)
     if form.is_valid():
       obj = form.save(commit=False)
-      obj.user = request.user.username
+      obj.user = request.user
       obj.save()
   else:
     form = ProfileUpdate()

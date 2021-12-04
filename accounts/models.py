@@ -63,9 +63,11 @@ class Profile(models.Model):
 
 
 CONDITION_CHOICES = (
-    ("0", "Relations"),
-    ("1", "Work and Career"),
-    ("2", "Personal Conditions"),
+    ("Relations", "Relations"),
+    ("Work and Career", "Work and Career"),
+    ("Personal Conditions", "Personal Conditions"),
+    ("Stress", "Stress"),
+    ("Dipression", "Dipression")
 )
 
 class Conditions(models.Model):
@@ -75,7 +77,7 @@ class Conditions(models.Model):
         default = '2')
   name = models.CharField(max_length=255)
   email = models.EmailField(verbose_name="email address")
-  date = models.DateField()
+  date = models.DateField(default=timezone.now)
   phone = models.CharField(max_length=15)
 
   class Meta:

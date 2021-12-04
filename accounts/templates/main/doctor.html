@@ -33,22 +33,31 @@
                   <th scope="col">Name</th>
                   <th scope="col">Disease</th>
                   <th scope="col">Date</th>
-                  <th>Status</th>
+                  <th>Approve</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  {% for condition in conditions%}
+                  <td>{{condition.name}}</td>
+                  <td>{{condition.topic}}</td>
+                  <td>{{condition.date}}</td>
                   <th><a href="" class = "btn btn-primary">Approve</a></th>
                 </tr>
+                {% endfor %}
               </tbody>
+              
             </table>
           </div>
         </div>
         <div class="col-md-4">
           <div class="current-book">
+            <div class="user-count cont">
+              <h1>{{users}}</h1>
+            </div>
+            <div class="booking cont">
+              <h1>{{bookcount}}</h1>
+            </div>
 
           </div>
         </div>

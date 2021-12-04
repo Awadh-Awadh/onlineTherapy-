@@ -23,6 +23,7 @@ class ConditionForm(forms.ModelForm):
     class Meta:
        model = Conditions
        fields = '__all__'
+       exclude = ['user']
 
 
 
