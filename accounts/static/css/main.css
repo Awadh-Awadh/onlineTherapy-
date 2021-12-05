@@ -199,7 +199,6 @@ body{
 }
 .book-condition{
   margin: 2.5rem 0;
-  
 }
 .book-content{
   width: 500px;
@@ -234,6 +233,9 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  transition:all 0.6s ease;
 }
 .cont{
   width: 150px;
@@ -242,7 +244,26 @@ body{
   border: 2px solid #2C5F2D;
   background-color: #ecf0f1;
 }
+.record{
+  font-size: 1.3rem;
+  padding-bottom: 1.5rem;
+  color: #2C5F2D;
+  margin-top: 1rem;
+}
+.dc{
+  margin: 1rem;
+  cursor: pointer;
+  transition:all 1s ease;
+}
+.dc i{
+  font-size: 1.2rem;
+  color: #021651;
 
+}
+.dc:hover{
+  transform:rotate(360deg);
+  font-size:1.5rem;
+}
 @keyframes bounce {
   0%   {top:0px;}
   50%  { top:30px;}

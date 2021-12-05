@@ -7,16 +7,16 @@
       <div class="row">
         <div class="col-md-2">
           <div class="icons">
-            <div class="home">
+            <div class="home dc">
               <i class="fas fa-home"></i>
             </div>
-            <div class="users">
+            <div class="users dc">
               <i class="fas fa-user"></i>
             </div>
-            <div class="dates">
+            <div class="dates dc">
               <i class="fas fa-calendar-week"></i>
             </div>
-            <div class="disease">
+            <div class="disease dc">
               <i class="fas fa-clock"></i>
             </div>
             
@@ -42,7 +42,9 @@
                   <td>{{condition.name}}</td>
                   <td>{{condition.topic}}</td>
                   <td>{{condition.date}}</td>
-                  <th><a href="" class = "btn btn-primary">Approve</a></th>
+                  <th>
+                    <a href="{% url 'docView' %}" class = " btn btn-primary" id = 'btn'>Approve</a>
+                  </th>
                 </tr>
                 {% endfor %}
               </tbody>
@@ -52,10 +54,12 @@
         </div>
         <div class="col-md-4">
           <div class="current-book">
-            <div class="user-count cont">
+            <div class="user-count cont text-center">
+              <h1  class = 'record'><i class="fas fa-user"></i> Users</h1>
               <h1>{{users}}</h1>
             </div>
-            <div class="booking cont">
+            <div class="booking cont text-center">
+              <h1 class = 'record'><i class="fas fa-clipboard"></i> Bookings</h1>
               <h1>{{bookcount}}</h1>
             </div>
 
