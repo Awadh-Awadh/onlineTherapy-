@@ -4,6 +4,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
 from .forms import CustomCreationForm, ConditionForm, ProfileUpdate
 from .models import Conditions, CustomUser
+from django.conf import settings
+from django.core.mail import send_mail
+
 
 
 
@@ -92,3 +95,15 @@ def profile(request):
     'form': form
   }
   return render(request, 'main/profile.html', context)
+def send(request, id):
+     user = Conditions.objects.get(id=id)
+     username = user.name
+     subject = "Hello User"
+     message = f'Hello{username}, Thank you for booking a call with us on {user.dat}\n'
+     'You will recieve a zoom link and time for the video call'
+     email_from = settings.EMAIL_HOST_USER
+     recipient_list = [user.email, ]
+     send_mail( subject, message, email_from, recipient_list )
+     return render(request, 'main/email.html')
+
+

@@ -4,33 +4,29 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-  <h1>Register Your Account</h1>
-
-
   <div class="row">
     <div class="col-md-6">
       <div class="form">
-
+        <div class="sign-content">
+          <h1 class = "text-center text">REGISTER</h1>
+        <div class="line line-center"></div>
+        </div>
         <form method = "Post">
           <div class="inner">
             {%csrf_token%}
             {{ form|crispy }}
-            <button type="submit" class =" btn btn-lg btn-dark mt-4">
+            <button type="submit" class =" btn btn-lg btn-outline-success mt-4">
               Sign Up
             </button>
           </div>
-        </form>
-
-       
-        
-          
+        </form>        
       </div>     
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 cust">
       <div class="content text-center">
-        <!-- <div class="img">
-          <img class ="img-sign" src="{% static 'images/login.png' %}" alt="">  
-        </div> -->
+         <div class="img">
+          <img class ="img-login" src="{% static 'images/sign.svg' %}" alt="">  
+        </div> 
         <h5>Have an Account?</h5>
         <a href="{% url 'login' %}"><button class = 'btn btn-lg btn-outline-dark'>Sign In</button></a>
       </div>
