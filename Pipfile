@@ -8,6 +8,7 @@ Django = "*"
 psycopg2 = "*"
 django-crispy-forms = "*"
 django-datetimepicker = "*"
+whitenoise = "*"
 
 [dev-packages]
 
