@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url as dj_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,15 +81,19 @@ WSGI_APPLICATION = 'OnlineTherapy.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "online",
-        'USERNAME': "awadh-dev",
-        'PASSWORD': os.environ.get("PASSWORD"),
+PRODUCTION=os.environ.get('PRODUCTION')
+DATABASES={}
+if PRODUCTION == 'True':
+    DATABASES['default'] = dj_url.config()
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': "online",
+            'USERNAME': "awadh-dev",
+            'PASSWORD': os.environ.get("PASSWORD"),
+        }
     }
-}
 
 
 # Password validation
@@ -134,6 +140,9 @@ EMAIL_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT=BASE_DIR/'static'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
