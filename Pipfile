@@ -9,6 +9,7 @@ psycopg2 = "*"
 django-crispy-forms = "*"
 django-datetimepicker = "*"
 whitenoise = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
