@@ -10,6 +10,7 @@ django-crispy-forms = "*"
 django-datetimepicker = "*"
 whitenoise = "*"
 dj-database-url = "*"
+gunicorn = "*"
 
 [dev-packages]
 
