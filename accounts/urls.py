@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import landing, log, home, docView, reg, calls, profile, send
-
+from .views import landing, log, home, docView, reg, calls, profile, send_mail
+from django.contrib.auth.views import LogoutView
 urlpatterns = [
    path('', landing, name='landingpage'),
    path('login/', log, name = 'login'),
@@ -9,6 +9,5 @@ urlpatterns = [
    path('doctordata/', docView, name = 'docView'),
    path('schedule/', calls, name = 'schedule' ),
    path('profile/', profile, name = 'profile' ),
-   path('sendmail/<int:pk>/' send, name = 'email'),
-
+   path('logout/', LogoutView.as_view(template_name = 'main/landing.html'), name = 'logout' ),
 ]

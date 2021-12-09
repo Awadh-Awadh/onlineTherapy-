@@ -5,37 +5,40 @@
 {% block content %}
 {% load static %}
 {% load crispy_forms_tags %}
-
-<div class="row">
-  <div class="col-md-6">
-    <div class="form">
-      <div class="log-content">
-        <h1 class = "text-center text">Login</h1>
-      <div class="line line-center"></div>
-      </div>
-      
-
-      <form method="POST">
-        <div class="inner">
-          {%csrf_token%}
-          {{ form | crispy }}
-          <button type="submit" class=" login-btn btn btn-lg btn-outline-success mt-4 ">
-            Sign Up
-          </button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form">
+        <div class="log-content">
+          <h1 class = "text-center text">Login</h1>
+        <div class="line line-center"></div>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="col-md-6 cust" >
-    <div class="content text-center">
-      <div class="img">
-        <img class ="img-login" src="{% static 'images/log.svg' %}" alt="">
-
+        
+  
+        <form method="POST">
+          <div class="inner">
+            {%csrf_token%}
+            {{ form | crispy }}
+            <button type="submit" class=" login-btn btn btn-lg btn-outline-success mt-4 ">
+              Sign Up
+            </button>
+          </div>
+        </form>
       </div>
-      <h5 class = "form-info">Don't have an Account?</h5>
-      <a href="{% url 'register' %}"><button class='btn btn-lg btn-outline-dark'>Sign UP</button></a>
     </div>
-
+    <div class="col-md-6 cust" >
+      <div class="content text-center">
+        <div class="img">
+          <img class ="img-login" src="{% static 'images/log.svg' %}" alt="">
+  
+        </div>
+        <h5 class = "form-info">Don't have an Account?</h5>
+        <a href="{% url 'register' %}"><button class='btn btn-lg btn-outline-dark'>Sign UP</button></a>
+      </div>
+  
+  </div>
+  </div>
 </div>
+
 
 {% endblock %}

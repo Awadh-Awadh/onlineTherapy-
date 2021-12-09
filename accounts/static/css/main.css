@@ -1,11 +1,10 @@
-
-html{
-  scroll-behavior: smooth;
-}
-body{
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
 }
 .nav-img{
   height: 55px;
@@ -43,8 +42,8 @@ body{
   line-height: 3rem;
 }
 .home-img,.video-img,.landing-image{
-  height: 500px;
-  width: 800px;
+  height: 600px;
+  width: 600px;
 }
 .landing-content h1,h5,p{
   color: #fff;
@@ -227,7 +226,7 @@ body{
 }
 .landing{
   background-color: #2C5F2D;
-  height: 100vh;
+  height: auto
 }
 .icons{
   display: flex;
@@ -280,11 +279,12 @@ body{
 }
 .cust{
   background-color: #2C5F2D;
-  height: 100vh;
+  height: 130vh;
+  max-height: max-content;
 }
 .img-login{
-  width: 600px;
-  height: 600px;
+  width: 4500x;
+  height: 500px;
 }
 .sign-content{
   margin-bottom: 2rem;
@@ -296,7 +296,9 @@ body{
   font-weight: 600;
   text-decoration: underline;
 }
-
+.image-cont{
+  margin-top: 10rem;
+}
 @keyframes bounce {
   0%   {top:0px;}
   50%  { top:30px;}

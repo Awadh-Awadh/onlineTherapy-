@@ -4,6 +4,7 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
       <div class="form">
@@ -24,15 +25,20 @@
     </div>
     <div class="col-md-6 cust">
       <div class="content text-center">
-         <div class="img">
-          <img class ="img-login" src="{% static 'images/sign.svg' %}" alt="">  
-        </div> 
-        <h5>Have an Account?</h5>
-        <a href="{% url 'login' %}"><button class = 'btn btn-lg btn-outline-dark'>Sign In</button></a>
+        <div class="image-cont">
+          <div class="img">
+            <img class ="img-login" src="{% static 'images/sign.svg' %}" alt="">  
+          </div> 
+          <h5>Have an Account?</h5>
+          <a href="{% url 'login' %}"><button class = 'btn btn-lg btn-outline-dark'>Sign In</button></a>
+        </div>
+         
       </div>
     </div>
     
   </div>
+</div>
+  
  
 
 

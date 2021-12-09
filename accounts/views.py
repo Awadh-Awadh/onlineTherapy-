@@ -6,6 +6,7 @@ from .forms import CustomCreationForm, ConditionForm, ProfileUpdate
 from .models import Conditions, CustomUser
 from django.conf import settings
 from django.core.mail import send_mail
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -52,11 +53,11 @@ def log(request):
       return redirect(home)
   return render(request, 'auth/login.html', {'form': form})
 
-
+@login_required
 def home(request):
   return render(request, 'main/home.html')
 
-
+@login_required
 def docView(request):
    conditions = Conditions.objects.all()
    users_count = CustomUser.objects.all().count()
@@ -76,7 +77,7 @@ def calls(request):
           obj = form.save(commit=False)
           obj.user = request.user
           obj.save()
-          messages.success(request,  "Response Recorded. You will receive an email with the full details instructions")
+          messages.success(request,  "Response Recorded. You will receive an email with the full details instructions.Thank You")
           return redirect('home')
   else:
      form = ConditionForm()
@@ -95,15 +96,5 @@ def profile(request):
     'form': form
   }
   return render(request, 'main/profile.html', context)
-def send(request, id):
-     user = Conditions.objects.get(id=id)
-     username = user.name
-     subject = "Hello User"
-     message = f'Hello{username}, Thank you for booking a call with us on {user.dat}\n'
-     'You will recieve a zoom link and time for the video call'
-     email_from = settings.EMAIL_HOST_USER
-     recipient_list = [user.email, ]
-     send_mail( subject, message, email_from, recipient_list )
-     return render(request, 'main/email.html')
 
 
