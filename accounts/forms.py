@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.forms import ModelForm, widgets
+from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.contrib.auth import get_user_model
@@ -23,17 +23,6 @@ class ConditionForm(forms.ModelForm):
        model = Conditions
        fields = '__all__'
        exclude = ['user']
-
-
-
-
-from datetimepicker.widgets import DateTimePicker
-
-
-class SampleForm(forms.Form):
-  datetime = forms.DateTimeField(
-  widget=DateTimePicker(),
-  )
 
 class ProfileUpdate(forms.ModelForm):
   username = forms.CharField(max_length=255)
