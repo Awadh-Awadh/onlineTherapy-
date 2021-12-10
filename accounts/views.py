@@ -98,3 +98,5 @@ def profile(request):
   return render(request, 'main/profile.html', context)
 
 
+def approve(request):
+  return render(request, 'main/email.html')

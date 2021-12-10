@@ -279,11 +279,10 @@ html{
 }
 .cust{
   background-color: #2C5F2D;
-  height: 130vh;
-  max-height: max-content;
+  height: 100vh;
 }
 .img-login{
-  width: 4500x;
+  width: 450px;
   height: 500px;
 }
 .sign-content{
@@ -298,6 +297,9 @@ html{
 }
 .image-cont{
   margin-top: 10rem;
+}
+.email{
+  margin-top: 3rem;
 }
 @keyframes bounce {
   0%   {top:0px;}
